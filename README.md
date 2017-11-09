@@ -1,0 +1,1 @@
+# jp-pt210-printer-cordova-plugin
