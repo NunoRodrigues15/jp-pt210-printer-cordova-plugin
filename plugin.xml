@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-jp-pt210" version="0.0.1">
+    <name>BlutoothPrinterJPPT210</name>
+    <description>A Cordova driver for JP-PT210 bluetooth printers</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,jp_pt210,bluetooth,printer</keywords>
+    <author>Nuno Rodrigues</author>
+    <js-module src="www/jpprinter.js" name="JpPrinter">
+        <clobbers target="jpprinter" />
+    </js-module>
+    <platform name="android">
+      <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+        <config-file target="config.xml" parent="/*">
+            <feature name="JpPrinter">
+                <param name="android-package" value="CDVDevice"/>
+            </feature>
+        </config-file>
+        <source-file src="src/printerlibs.jar" target-dir="libs"/> <!-- alerar para o ficheiro correcto-->
+    </platform>
+</plugin>
