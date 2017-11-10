@@ -7,7 +7,7 @@
     <keywords>cordova,jp_pt210,bluetooth,printer</keywords>
     <author>Nuno Rodrigues</author>
     <js-module src="www/jpprinter.js" name="JpPrinter">
-        <clobbers target="jpprinter" />
+        <clobbers target="JpPrinter" />
     </js-module>
     <platform name="android">
       <config-file target="AndroidManifest.xml" parent="/*">
@@ -17,9 +17,10 @@
         </config-file>
         <config-file target="config.xml" parent="/*">
             <feature name="JpPrinter">
-                <param name="android-package" value="CDVDevice"/>
+                <param name="android-package" value="com.odkas.factory.JpPrinter"/>
+                <param onLoad="true"/>
             </feature>
         </config-file>
-        <source-file src="src/printerlibs.jar" target-dir="libs"/> <!-- alerar para o ficheiro correcto-->
+        <source-file src="src/printerlibs.jar" target-dir="src"/> <!-- alerar para o ficheiro correcto-->
     </platform>
 </plugin>
