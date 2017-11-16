@@ -6,7 +6,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,jp_pt210,bluetooth,printer</keywords>
     <author>Nuno Rodrigues</author>
-    <!-- <repo>https://github.com/driftyco/cordova-plugin-template.git</repo> -->
+    <repo>https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git/repo>
 
     <js-module src="www/jpprinter.js" name="JpPrinter">
         <clobbers target="JpPrinter" />
