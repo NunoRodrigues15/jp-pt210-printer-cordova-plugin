@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-jp-pt210-printer",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "cordova": {
     "id": "cordova-plugin-jp-pt210-printer",
     "platforms": [

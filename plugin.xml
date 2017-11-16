@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-jp-pt210" version="0.0.1">
+        id="cordova-plugin-jp-pt210-printer" version="0.0.1">
     <name>BlutoothPrinterJPPT210</name>
     <description>A Cordova Plugin for JP-PT210 Bluetooth Printer</description>
     <license>Apache 2.0</license>
