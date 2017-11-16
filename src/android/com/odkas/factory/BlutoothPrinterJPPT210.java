@@ -1,6 +1,6 @@
 /**
  */
-package com.example;
+package com.odkas.factory.jpprinter;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -11,6 +11,7 @@ import org.apache.cordova.PluginResult.Status;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
+//import com.lvrenyang.io.BTPrinting;
 
 import android.util.Log;
 
