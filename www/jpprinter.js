@@ -1,17 +1,29 @@
 var exec = require('cordova/exec');
 
-exports.IO  = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'JpPrinter', 'IO ', []);
-};
+var PLUGIN_NAME = 'JpPrinter';
 
-exports.Label1  = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'JpPrinter', 'Label1 ', []);
-};
+var JpPrinter = {
+  echo: function(phrase, cb) {
+    exec(cb, null, PLUGIN_NAME, 'echo', [phrase]);
+  },
+  getDate: function(cb) {
+    exec(cb, null, PLUGIN_NAME, 'getDate', []);
+  }
+  // IO : function(successCallback, errorCallback) {
+  //     cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'IO ', []);
+  // },
+  //
+  // Label1 : function(successCallback, errorCallback) {
+  //     cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'Label1 ', []);
+  // },
+  //
+  // BLEPrinting : function(successCallback, errorCallback) {
+  //     cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'BLEPrinting ', []);
+  // },
+  //
+  // BTPrinting : function(successCallback, errorCallback) {
+  //     cordova.exec(successCallback, errorCallback, PLUGIN_NAME, 'BTPrinting ', []);
+  // }
+}
 
-exports.BLEPrinting = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'JpPrinter', 'BLEPrinting ', []);
-};
-
-exports.BTPrinting  = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, 'JpPrinter', 'BTPrinting ', []);
-};
+module.exports = JpPrinter;
