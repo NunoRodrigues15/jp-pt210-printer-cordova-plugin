@@ -1,12 +1,19 @@
 {
   "name": "cordova-plugin-jpprinter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "cordova": {
     "id": "cordova-plugin-jpprinter",
     "platforms": [
       "android"
     ]
   },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "jp-pt210",
+    "bluetooth",
+    "printer"
+],
   "engines": [{
     "name": "cordova",
     "version": ">=7.0.0"

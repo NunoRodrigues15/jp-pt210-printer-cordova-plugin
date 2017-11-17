@@ -1,1 +1,1 @@
-# jp-pt210-printer-cordova-plugin
+# cordova-plugin-jpprinter
