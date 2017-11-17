@@ -1,15 +1,15 @@
 {
-  "name": "cordova-plugin-jp-pt210-printer",
+  "name": "cordova-plugin-jpprinter",
   "version": "0.0.1",
   "cordova": {
-    "id": "cordova-plugin-jp-pt210-printer",
-    "platforms": "android"
+    "id": "cordova-plugin-jpprinter",
+    "platforms": [
+      "android"
+    ]
   },
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=7.0.0"
-    }
-  ],
+  "engines": [{
+    "name": "cordova",
+    "version": ">=7.0.0"
+  }],
   "description": "A Cordova Plugin for JP-PT210 bluetooth printers"
 }
