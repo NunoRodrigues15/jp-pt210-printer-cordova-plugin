@@ -1,6 +1,6 @@
 /**
  */
-package com.odkas.factory.jpprinter;
+package com.odkas.factory;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
