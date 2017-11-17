@@ -22,7 +22,7 @@
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     </config-file>
 
-    <source-file src="src/android/com/odkas/factory/BlutoothPrinterJPPT210.java" target-dir="src/android/com/odkas/factory/"/>
+    <source-file src="src/android/com/odkas/factory/JpPrinter.java" target-dir="src/android/com/odkas/factory/"/>
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="JpPrinter">
