@@ -18,5 +18,9 @@
     "name": "cordova",
     "version": ">=7.0.0"
   }],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git"
+  },
   "description": "A Cordova Plugin for JP-PT210 bluetooth printers"
 }
