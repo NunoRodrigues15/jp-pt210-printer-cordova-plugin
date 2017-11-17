@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-jpprinter" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-jpprinter" version="0.0.5">
 
   <name>BlutoothPrinterJPPT210</name>
   <description>A Cordova Plugin for JP-PT210 Bluetooth Printer</description>
@@ -22,7 +22,7 @@
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     </config-file>
 
-    <source-file src="src/android/com/odkas/factory/BlutoothPrinterJPPT210.java" target-dir="src/android/com/odkas/factory/"/>
+    <source-file src="src/android/com/odkas/factory/JpPrinter.java" target-dir="src/android/com/odkas/factory/"/>
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="JpPrinter">
