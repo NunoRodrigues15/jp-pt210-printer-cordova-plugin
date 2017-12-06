@@ -9,7 +9,7 @@
   <repo>https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git</repo>
 
   <engines>
-      <engine name="cordova" version=">=7.0.0"/>
+      <engine name="cordova" version=">=6.5.0"/>
   </engines>
 
   <js-module src="www/jpprinter.js" name="JpPrinter">
