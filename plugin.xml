@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-jpprinter" version="0.0.12">
+
+  <name>BlutoothPrinterJPPT210</name>
+  <description>A Cordova Plugin for JP-PT210 Bluetooth Printer</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,jp-pt210,bluetooth,printer</keywords>
+  <author>Nuno Rodrigues</author>
+  <repo>https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git</repo>
+
+  <engines>
+      <engine name="cordova" version=">=7.0.0"/>
+  </engines>
+
+  <js-module src="www/jpprinter.js" name="JpPrinterPlugin">
+    <clobbers target="JpPrinterPlugin"/>
+  </js-module>
+  <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.BLUETOOTH"/>
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    </config-file>
+
+    <source-file src="src/android/com/odkas/jpprinterplugin/JpPrinterPlugin.java" target-dir="src/android/com/odkas/jpprinterplugin/"/>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="JpPrinter">
+        <param name="android-package" value="com.odkas.jpprinterplugin"/>
+        <param onLoad="true"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/lib/printerlibs.jar" target-dir="libs"/>
+  </platform>
+</plugin>

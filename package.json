@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-jpprinter",
+  "version": "0.0.12",
+  "cordova": {
+    "id": "cordova-plugin-jpprinter",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "jp-pt210",
+    "bluetooth",
+    "printer"
+],
+  "engines": [{
+    "name": "cordova",
+    "version": ">=7.0.0"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git"
+  },
+  "description": "A Cordova Plugin for JP-PT210 bluetooth printers"
+}
