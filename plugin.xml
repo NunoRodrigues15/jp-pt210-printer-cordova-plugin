@@ -9,7 +9,7 @@
   <repo>https://github.com/NunoRodrigues15/jp-pt210-printer-cordova-plugin.git</repo>
 
   <engines>
-      <engine name="cordova" version=">=6.5.0"/>
+      <engine name="cordova" version=">=7.0.0"/>
   </engines>
 
   <js-module src="www/jpprinter.js" name="JpPrinter">
@@ -20,13 +20,14 @@
       <uses-permission android:name="android.permission.BLUETOOTH"/>
       <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     </config-file>
 
-    <source-file src="src/android/com/odkas/factory/JpPrinter.java" target-dir="src/android/com/odkas/factory/"/>
+    <source-file src="src/android/com/odkas/jpprinterplugin/JpPrinterPlugin.java" target-dir="src/android/com/odkas/jpprinterplugin/"/>
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="JpPrinter">
-        <param name="android-package" value="com.odkas.factory.jpprinter"/>
+        <param name="android-package" value="com.odkas.jpprinterplugin"/>
         <param onLoad="true"/>
       </feature>
     </config-file>
