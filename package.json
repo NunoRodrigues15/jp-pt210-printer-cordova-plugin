@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-jpprinter",
-  "version": "0.0.6",
+  "version": "0.0.12",
   "cordova": {
     "id": "cordova-plugin-jpprinter",
     "platforms": [

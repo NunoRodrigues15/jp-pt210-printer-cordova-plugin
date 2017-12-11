@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.Date;
+import java.util.Iterator;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -29,9 +30,13 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.PluginResult.Status;
-import org.json.JSONArray;
 
-public class JpPrinterPlugin extends Thread, CordovaPlugin implements Runnable {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+public class JpPrinterPlugin extends CordovaPlugin implements Runnable {
     private static final String TAG = "JpPrinterPlugin";
     private BroadcastReceiver broadcastReceiver = null;
     public static final BTPrinting bt = new BTPrinting();
@@ -229,15 +234,17 @@ public class JpPrinterPlugin extends Thread, CordovaPlugin implements Runnable {
                         if (result) {
                             Toast.makeText(getContext().context, "Connect Printer Succeed", Toast.LENGTH_SHORT).show();
                             //remove all devices
-							this.removeDevices();
-                            return true;
+							getContext().removeDevices();
+                            //return true;
                         }
                         Toast.makeText(getContext().context, "Connect Printer Failed", Toast.LENGTH_SHORT).show();
-						return false;
-                    }
+						//return false;
+                    };
                 });
+			return true;
             }
         }
+		return false;
     }
 
     private void uninitBroadcast() {
@@ -250,7 +257,7 @@ public class JpPrinterPlugin extends Thread, CordovaPlugin implements Runnable {
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
         if (adapter == null) {
             this.activity.finish();
-            return;
+            return false;
         }
         int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1;
         ActivityCompat.requestPermissions(this.activity,
@@ -267,7 +274,7 @@ public class JpPrinterPlugin extends Thread, CordovaPlugin implements Runnable {
             } while (!adapter.isEnabled());
         } else {
             this.activity.finish();
-            return;
+            return false;
         }
         adapter.cancelDiscovery();
         //remove all Devices
