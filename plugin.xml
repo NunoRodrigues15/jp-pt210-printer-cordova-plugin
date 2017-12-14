@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-jpprinter" version="0.0.12">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="cordova-plugin-jpprinter" version="0.0.18">
 
   <name>BlutoothPrinterJPPT210</name>
   <description>A Cordova Plugin for JP-PT210 Bluetooth Printer</description>
@@ -12,25 +13,25 @@
       <engine name="cordova" version=">=7.0.0"/>
   </engines>
 
-  <js-module src="www/jpprinter.js" name="JpPrinterPlugin">
-    <clobbers target="JpPrinterPlugin"/>
-  </js-module>
   <platform name="android">
+    <js-module src="www/JpPrinterPlugin.js" name="JpPrinterPlugin">
+      <runs/>
+      <clobbers target="JpPrinterPlugin"/>
+    </js-module>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="JpPrinterPlugin">
+        <param name="android-package" value="com.odkas.jpprinterplugin.JpPrinterPlugin"/>
+        <param onLoad="true"/>
+      </feature>
+    </config-file>
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.BLUETOOTH"/>
       <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     </config-file>
 
     <source-file src="src/android/com/odkas/jpprinterplugin/JpPrinterPlugin.java" target-dir="src/android/com/odkas/jpprinterplugin/"/>
-
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="JpPrinter">
-        <param name="android-package" value="com.odkas.jpprinterplugin"/>
-        <param onLoad="true"/>
-      </feature>
-    </config-file>
 
     <source-file src="src/android/lib/printerlibs.jar" target-dir="libs"/>
   </platform>

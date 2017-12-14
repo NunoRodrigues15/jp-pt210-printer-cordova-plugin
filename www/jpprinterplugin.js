@@ -21,6 +21,6 @@ var JpPrinterPlugin = {
   disconnect: function(phrase, cb) {
     exec(cb, null, PLUGIN_NAME, 'disconnect', []);
   }
-}
+};
 
 module.exports = JpPrinterPlugin;

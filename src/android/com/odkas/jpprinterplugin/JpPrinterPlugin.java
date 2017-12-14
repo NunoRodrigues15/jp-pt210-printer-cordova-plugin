@@ -57,7 +57,6 @@ public class JpPrinterPlugin extends CordovaPlugin implements Runnable {
 	}
 
 	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-		try{
 			if(action.equals("echo")) {
 				String phrase = args.getString(0);
 				// Echo back the first argument
@@ -69,25 +68,22 @@ public class JpPrinterPlugin extends CordovaPlugin implements Runnable {
 				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.connect());
 				callbackContext.sendPluginResult(result);
 			} else if(action.equals("connectTo")){
-				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.connectTo(args.getString(0));
+				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.connectTo(args.getString(0)));
 				callbackContext.sendPluginResult(result);
 			}  else if(action.equals("printText")){
-				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.printText(args.getString(0));
+				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.printText(args.getString(0),0,0));
 				callbackContext.sendPluginResult(result);
 			}  else if(action.equals("disconnect")){
-				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.disconnect();
+				final PluginResult result = new PluginResult(PluginResult.Status.OK, this.disconnect());
 				callbackContext.sendPluginResult(result);
 			}
 			return true;
-		} catch(JSONException e) {
-			e.printStackTrace();
-		}
 	}
 
     public JpPrinterPlugin(Activity activity, Context context) {
         this.pos.Set(bt);
-        this.stringDevices = new ArrayList<>();
-        this.myDevices = new ArrayList<>();
+        this.stringDevices = new ArrayList<String>();
+        this.myDevices = new ArrayList<BluetoothDevice>();
 		    this.devices = new JSONArray();
         this.activity = activity;
         this.context = context;
